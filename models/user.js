@@ -3,7 +3,16 @@ var Schema = mongoose.Schema
 
 var user_schema = new Schema({
   email: {type:String,required:"El correo es obligatorio"},
-  password: {type:String,required:"La contraseña es obligatorio",minlength:[8,"La contraseña es muy corta"]}
+  password: {
+  	type:String,required:"La contraseña es obligatorio",
+  	minlength:[8,"La contraseña es muy corta"],
+  	validate: {
+  		validator:function(pws){
+  			return this.password_confirmation == pws;	
+  		},
+  		message: "Las contraseñas no son iguales"
+  	}
+  }
 });
 
 user_schema.virtual("password_confirmation").get(function(){

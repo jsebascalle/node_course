@@ -2,27 +2,12 @@ extend ./layout
 block content
 	div.row.p-4
 		div.col-md-4
-			form(action="/login",method="POST")
+			form(action="/signup",method="POST")
 				div.form-group
 					label(for="email") Email
 					input(type="email",name="email",class="form-control",placeholder="email",id="email")
 				div.form-group
 					label(for="password") Contraseña
 					input(type="password",name="password",class="form-control",placeholder="Contraseña",id="password")
-				div.form-group
-					label(for="password_confirmation") Repetir Contraseña
-					input(type="password",name="password_confirmation",class="form-control",placeholder="Repetir Contraseña",id="password_confirmation")
-				input(type="submit",value="Iniciar Session", class="btn btn-primary")
-	div.row.p-4
-		table.table.table-striped
-			thead.bg-blue
-				th email
-				th password
-			tbody
-				each doc in docs
-					tr
-						td= doc.email
-						td= doc.password
-				else
-					tr
-						td(colspan="2") No hay registros
+				input(type="submit",value="Iniciar sesión", class="btn btn-primary")
+				a(href="/register",class="btn btn-info") Registrar
