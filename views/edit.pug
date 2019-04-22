@@ -1,0 +1,12 @@
+extend ./layout
+block content
+	div.row.p-4
+		div.col-md-4
+			form(action="/edit/"+user.id,method="POST")
+				input(type="hidden",value="PUT",name="_method")
+				div.form-group
+					label(for="email") Email
+					input(type="email",name="email",value=user.email,class="form-control",placeholder="email",id="email")
+				input(type="submit",value="Actualizar", class="btn btn-primary")
+				a(href="/login",class="btn btn-info") Login
+	div.row.p-4
