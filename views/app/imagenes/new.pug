@@ -1,0 +1,14 @@
+extend ../layout
+block content
+	div.row.p-4
+	div.col-md-4
+		form(action="app/imagenes",method="POST")
+			div.form-group
+				label(for="nombre") Nombre
+				input(type="nombre",name="nombre",class="form-control",placeholder="nombre",id="nombre")
+			div.form-group
+				label(for="imagen") Imagen
+				input(type="file",name="imagen",class="form-control",id="imagen")
+			input(type="submit",value="Subir", class="btn btn-primary")
+			a(href="app/",class="btn btn-info") Home
+			a(href="app/imagenes",class="btn btn-info") Imagenes

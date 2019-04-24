@@ -1,0 +1,17 @@
+extend ../layout
+block content
+	h1 Imagenes
+	a(href="imagenes/new",class="btn btn-primary") crear imagen
+	div.row.p-4
+		table.table.table-striped
+			thead.bg-blue
+				th Nombre
+				th Imagen
+			tbody
+				each doc in docs
+					tr
+						td= doc.nombre
+						td
+				else
+					tr
+						td(colspan="2") No hay registros
