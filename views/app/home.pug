@@ -1,4 +1,5 @@
-extend ./layout
+extend ./layout_app
 block content
 	h1 hola #{user_auth.email}
 	a(href="app/imagenes",class="btn btn-info") Imagenes
+	script(src="/js/client.js")

@@ -19,11 +19,18 @@ block content
 			thead.bg-blue
 				th email
 				th password
+				th
 			tbody
 				each doc in docs
 					tr
 						td= doc.email
 						td= doc.password
+						td
+							div.btn-group
+								a(href="/edit/"+doc.id,class="btn btn-primary") Editar
+								form(action="/delete/"+doc.id, method="POST")
+									input(type="hidden",value="DELETE",name="_method")
+									input(type="submit",value="Eliminar",class="btn btn-danger")
 				else
 					tr
-						td(colspan="2") No hay registros
+						td(colspan="3") No hay registros

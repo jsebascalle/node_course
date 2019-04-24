@@ -1,6 +1,7 @@
 var User = require('../models/user.js').User;
 
 module.exports = function(req,res,next){
+	console.log(req.session);
 	if (!req.session.user_id) {
 		res.redirect("/login");
 	}else{
@@ -16,3 +17,10 @@ module.exports = function(req,res,next){
 		});
 	}
 };
+
+/*module.exports = function (req, res, next) {
+  if (!req.session) {
+    return next(new Error('oh no')) // handle error
+  }
+  next() // otherwise continue
+};*/
